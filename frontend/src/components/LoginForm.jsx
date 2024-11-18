@@ -1,71 +1,3 @@
-// import { useState } from "react";
-// import api from "../api";
-// import { useNavigate } from "react-router-dom";
-// import { JWT_TOKEN } from "../constants";
-
-
-// function LoginForm() {
-//     const navigate = useNavigate();
-//     const [email, setEmail] = useState("");
-//     const [password, setPassword] = useState("");
-//     const [loading, setLoading] = useState(false);
-
-//     const handleSubmit = async (e) => {
-//         setLoading(true);
-//         e.preventDefault();
-
-//         try {
-//             const response = await api.post("/user/login/", {
-//                 email,
-//                 password,
-//             });
-
-//             const { jwt_token } = response.data;
-//             localStorage.setItem(JWT_TOKEN, jwt_token);
-//             navigate("/");
-//         } catch (error) {
-//             console.error("Login error:", error);
-//             alert("Login failed: ", error.message);
-//         } finally {
-//             setLoading(false);
-//         }
-//     };
-
-//     return (
-//         <form onSubmit={handleSubmit} className="form">
-//             <label>
-//                 Email:
-//                 <input
-//                     className="form-control"
-//                     type="email"
-//                     value={email}
-//                     onChange={(e) => setEmail(e.target.value)}
-//                     required
-//                     placeholder="Enter your email"
-//                 />
-//             </label>
-//             <label>
-//                 Password:
-//                 <input
-//                     className="form-control"
-//                     type="password"
-//                     value={password}
-//                     onChange={(e) => setPassword(e.target.value)}
-//                     required
-//                     placeholder="Enter your password"
-//                 />
-//             </label>
-//             <button type="submit" disabled={loading}>
-//                 {loading ? "Loading..." : "Login"}
-//             </button>
-//         </form>
-//     );
-// }
-
-
-// export default LoginForm;
-
-
 import { useState } from 'react';
 import api from '../api';
 import { useNavigate } from "react-router-dom";
@@ -131,20 +63,10 @@ function LoginForm() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <div className="form-check">
-                            <input
-                                type="checkbox"
-                                className="form-check-input"
-                                id="exampleCheck1"
-                            />
-                            <label className="form-check-label" htmlFor="exampleCheck1">
-                                Check me out
-                            </label>
-                        </div>
                         {/* <button type="submit" className="btn btn-primary">
                             Submit
                         </button> */}
-                        <button type="submit" disabled={loading} className="btn btn-primary">
+                        <button type="submit" disabled={loading} className="btn btn-primary mt-4">
                             {loading ? "Loading..." : "Login"}
                         </button>
                     </form>

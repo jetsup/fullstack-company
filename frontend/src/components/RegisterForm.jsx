@@ -72,17 +72,7 @@ function RegisterForm() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <div className="form-check">
-                            <input
-                                type="checkbox"
-                                className="form-check-input"
-                                id="exampleCheck1"
-                            />
-                            <label className="form-check-label" htmlFor="exampleCheck1">
-                                Check me out
-                            </label>
-                        </div>
-                        <button type="submit" disabled={loading} className="btn btn-primary">
+                        <button type="submit" disabled={loading} className="btn btn-primary mt-4">
                             {loading ? "Loading..." : "Register"}
                         </button>
                     </form>
