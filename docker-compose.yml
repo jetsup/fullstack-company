@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "9090:9090" # map container port to host
+    networks:
+      - app_network
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000" # map container port to host
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
